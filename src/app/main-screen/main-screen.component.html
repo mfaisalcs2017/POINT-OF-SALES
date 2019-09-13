@@ -1,0 +1,12 @@
+<section>
+  <span style="float: left;width: 50%">
+    <app-products-amount></app-products-amount>
+  </span>
+  <span style="float: right;width: 50%;">
+    <div class="secondBack">
+      <div class="scrolll" id="style-2">
+        <app-products-list *ngFor="let item of items" [shoppingItems]="item"></app-products-list>
+      </div>
+    </div>
+  </span>
+</section>

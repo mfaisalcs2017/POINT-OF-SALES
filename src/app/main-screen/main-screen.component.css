@@ -1,0 +1,12 @@
+.secondBack {
+  background-color: gainsboro;
+  float: left;
+  margin-top: 3.5px;
+  height: 51em;
+}
+
+.scrolll {
+  clear: both;
+  overflow-y: scroll;
+  height: 96%;
+}

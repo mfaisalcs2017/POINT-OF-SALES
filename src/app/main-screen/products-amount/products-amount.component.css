@@ -1,0 +1,294 @@
+.background {
+  background-color: gainsboro;
+  height: 51em;
+  width: 99%;
+  float: left;
+  margin-top: 3.5px;
+}
+
+.navDetails {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.navDetails ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navDetails ul li {
+  color: black;
+  font-family: sans-serif;
+  width: 25%;
+  float: left;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.noProducts {
+  font-family: sans-serif;
+  text-align: center;
+  background: white;
+  position: relative;
+  top: -65%;
+  width: 95%;
+  left: 1%;
+  border-radius: 2em;
+}
+
+.desc {
+  background: white;
+  padding: 3%;
+  margin-bottom: -9%;
+  border-radius: .3em;
+}
+
+
+
+.productDetails {
+  background-color: white;
+  position: relative;
+}
+
+
+
+.secondNavDetails {
+  width: 96%;
+  position: relative;
+  margin-left: 3.5%;
+  margin-top: -1.5%;
+  top: -6px;
+  white-space: nowrap;
+}
+
+.secondNavDetails .listofProducts {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: white !important;
+  border-radius: 6px;
+}
+
+.secondNavDetails .listofProducts .listss {
+  color: black;
+  font-family: sans-serif;
+  width: 12%;
+  float: left;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.scrolll {
+  clear: both;
+  overflow-y: scroll;
+  height: 65%;
+  width: 97%;
+}
+
+.productText {
+  position: absolute;
+  top: 20%;
+  left: 7%;
+}
+
+#close {
+  background: red;
+  width: 29px;
+  font-weight: 900;
+  height: 0px;
+  color: white;
+  position: relative;
+  border-radius: 65%;
+  margin-left: -36px;
+  margin-top: 9px;
+  /* margin-top: 1.7%; */
+  cursor: pointer;
+}
+
+/* #close:before {
+  content: '';
+  height: 15px;
+  border-left: 3px solid white;
+  position: absolute;
+  transform: rotate(-53deg);
+  left: 13px;
+  top: 8px;
+  border-radius: 2%;
+  margin-left: 0%;
+} */
+
+/* #close:after {
+  content: '';
+  height: 15px;
+  border-left: 3px solid white;
+  position: absolute;
+  transform: rotate(51deg);
+  left: 13px;
+  top: 8px;
+  border-radius: 2%;
+} */
+
+.rtable {
+  white-space: nowrap;
+}
+
+
+.rtable th {
+  text-align: left;
+  text-transform: uppercase;
+  background: #ecece8;
+}
+
+.rtable th,
+.rtable td {
+  border: 1px solid #d9d7ce;
+  padding-top: 12px;
+  font-family: sans-serif;
+}
+
+.rtable--flip {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 3%
+}
+
+.rtable--flip thead {
+  float: left;
+  width: 50%;
+}
+
+.rtable--flip tbody {
+  float: right;
+  width: 45%;
+  background: white;
+}
+
+.rtable--flip tr {
+  display: flex;
+  flex-direction: column;
+}
+
+.button1 {
+  border: none;
+  color: white;
+  padding: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 19px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 45%;
+  outline: none;
+  white-space: nowrap;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 30%;
+  font-family: sans-serif;
+  border-radius: 2%
+}
+
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  right: 32%;
+  top: 7px;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.reciept {
+  background-color: #03034a;
+  padding: 15px;
+  margin-top: 0;
+  border: none;
+  color: white;
+}
+
+.tableModal {
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  white-space: nowrap;
+  margin-bottom: 10%;
+}
+
+.tableModal th,
+.tableModal td {
+  font-family: sans-serif;
+  width: 1%;
+}
+
+.head tr th {
+  border-bottom: 2px solid gainsboro;
+  border-collapse: separate;
+  border-spacing: 5px 5px;
+}
+
+.body tr {
+  border-bottom: 1px solid gainsboro;
+
+}
+
+#container {
+  overflow: hidden;
+  width: 100%;
+  min-height: 36px;
+  position: relative;
+  white-space: nowrap;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+}
+
+#left-element {
+  position: absolute;
+  left: 9px;
+  top: 3px;
+  width: 13px;
+}
+
+#middle-element {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
+}
+
+#right-element {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 21%;
+}
+
+.width {
+  width: 90%;
+  margin-left: 5%;
+}

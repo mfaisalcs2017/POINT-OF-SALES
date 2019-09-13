@@ -1,0 +1,21 @@
+img {
+  float: left;
+  height: 100px;
+  width: 100px;
+  margin-left: 34px;
+  margin-top: 8px;
+  border-radius: 14px;
+  padding: 7px 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  object-fit: cover;
+  position: relative;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.images {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-size: cover;
+}

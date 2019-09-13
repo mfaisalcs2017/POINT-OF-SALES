@@ -1,0 +1,145 @@
+<div class="background">
+  <nav class="navDetails">
+    <ul>
+      <li>
+        PRODUCTS
+      </li>
+      <li>
+        PRICE
+      </li>
+      <li>
+        QUANTITY
+      </li>
+      <li>
+        TOTAL
+      </li>
+    </ul>
+  </nav>
+  <div class="scrolll" id="style-2">
+    <div *ngFor="let data of cartItems;let i = index">
+      <div class="secondNavDetails">
+        <ul class="listofProducts">
+          <li class="listss" (click)="delete($event, data)" id="close">
+            <span style="position: relative;top: -10px;">&times;</span>
+          </li>
+          <li class="listss">
+            {{data.item.name}}
+          </li>
+          <li class="listss" style="margin-left: 13%">
+            {{data.item.price}}
+          </li>
+          <li class="listss" style="margin-left: 18%">
+            <span (click)="dataDecrease(data)"
+              style="cursor: pointer;font-size: 17px;margin: 10%;user-select: none;">-</span>
+            <input type="number"
+              style="width: 37%;border-radius: 4px;outline: none;text-align: center;user-select: none;"
+              [(ngModel)]="data.amount" (blur)="checkAmount(data)">
+            <span (click)="dataIncrease(data)"
+              style="cursor: pointer;font-size: 17px;margin: 10%;user-select: none;">+</span>
+          </li>
+          <li class="listss" style="margin-left: 17%">
+            {{(data.item.price * data.amount) | currency:"INR":"symbol"}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="noProducts" noItemsInCart>
+    <div class="desc" *ngIf="(cartItems | json) == '[]' || !cartItems">THERE ARE NO PRODUCTS</div>
+  </div>
+
+  <table class="rtable rtable--flip">
+    <thead>
+      <tr>
+        <th>SubTotal</th>
+        <th>VAT tax</th>
+        <th>Discount</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{totalAmount | currency:"INR":"symbol"}}
+          <div style="float: right">{{getTotalItems()}} items</div>
+        </td>
+        <td>10%
+          <div style="float: right">{{totalNewAmountOnVat() | currency:"INR":"symbol"}}</div>
+        </td>
+        <td>10%
+          <div style="float: right">{{totalNewAmountonDiscount() | currency:"INR":"symbol"}}</div>
+        </td>
+        <td style="color: lightseagreen">{{finalAmount() | currency:"INR":"symbol"}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="display: flex">
+    <button class="button1" style="background-color: #e63a3a" (click)="cancelSale()">
+      Cancel Sale
+    </button>
+    <button class="button1" style="background-color: #3cc377" (click)="openModal()">
+      Process Sale
+    </button>
+    <div class="myModal" #showModal class="modal">
+      <div class="modalContent">
+        <!-- <div *ngFor="let data of cartItems1;let i = index"> -->
+        <span class="close" (click)="closeModal()">&times;</span>
+        <p class="reciept">Reciept</p>
+        <div class="width">
+          <p class="sale" style="text-align: center">Sale No.....00102</p>
+          <p style="font-family: sans-serif">Date: {{formatted_date}}</p>
+          <table class="tableModal table-order">
+            <thead class="head">
+              <tr>
+                <th>#</th>
+                <th>products</th>
+                <th>Quantity</th>
+                <th>SubTotal</th>
+              </tr>
+            </thead>
+            <tbody style="text-align: center" class="body">
+              <tr *ngFor="let data of cartItems1;let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{data.item.name}}</td>
+                <td>{{data.amount}}</td>
+                <td>{{(data.item.price * data.amount) | currency:"INR":"symbol"}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="container" style="border-top: 2px solid gainsboro !important">
+            <div id="left-element">
+              Total Items
+            </div>
+            <div id="middle-element">
+              {{getTotalItems()}} Total
+            </div>
+            <div id="right-element">
+              {{finalAmount() | currency:"INR":"symbol"}}
+            </div>
+          </div>
+          <div id="container" style="border-top: none !important">
+            <div id="middle-element">
+              Discount
+            </div>
+            <div id="right-element">
+              10%
+            </div>
+          </div>
+          <div id="container" style="border-bottom: none !important;border-top: none !important">
+            <div id="middle-element">
+              Vat
+            </div>
+            <div id="right-element">
+              10%
+            </div>
+          </div>
+        </div>
+        <div style="border-top: 2px solid gainsboro;margin-top:7%">
+          <button class="button1" (click)="closeModal()"
+            style="width: 94%;color: black;background-color: white;border: 1px solid gainsboro;height: 49px;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
